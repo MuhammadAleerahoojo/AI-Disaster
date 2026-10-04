@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-900 text-ink-100 font-body antialiased;
+  background-image:
+    radial-gradient(circle at 15% -10%, rgba(45,212,232,0.08), transparent 45%),
+    radial-gradient(circle at 100% 10%, rgba(239,68,68,0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #243044; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2DD4E8; }
+
+.glass {
+  background: rgba(17, 24, 38, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.leaflet-container {
+  background: #0B0F17 !important;
+  border-radius: 1rem;
+}
+
+/* Standard OpenStreetMap tiles are light by default and require no API key.
+   We invert + adjust hue/brightness to match the dark command-center theme
+   without depending on a paid/keyed dark tile provider. */
+.map-tiles-dark {
+  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9) saturate(0.7);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #111826;
+  color: #EEF1F6;
+  border-radius: 0.75rem;
+}
+.leaflet-popup-tip { background: #111826; }
+
+:focus-visible {
+  outline: 2px solid #2DD4E8;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

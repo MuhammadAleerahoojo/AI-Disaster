@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Secrets (kabhi push mat karo)
+.env
+.env.*
+!.env.example
+
+# Database aur uploads
+*.db
+*.sqlite3
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs / editor / OS
+*.log
+.vscode/
+.idea/
+.DS_Store
